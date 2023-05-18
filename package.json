@@ -1,0 +1,32 @@
+{
+  "name": "node-react-chatbot-sample-server",
+  "version": "1.0.0",
+  "description": "Node.js and React.js ChatBot Sample.",
+  "main": "index.js",
+  "nodemonConfig": {
+    "ignore": [
+      "data/*"
+    ]
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js",
+    "frontend": "npm run front --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+  },
+  "author": "hoong",
+  "license": "ISC",
+  "dependencies": {
+    "actions-on-google": "^2.14.0",
+    "body-parser": "^1.20.2",
+    "dialogflow": "^1.2.0",
+    "dialogflow-fulfillment": "^0.6.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^5.4.20"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22"
+  }
+}
