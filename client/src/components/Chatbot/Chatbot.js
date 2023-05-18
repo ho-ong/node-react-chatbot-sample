@@ -30,7 +30,7 @@ function Chatbot() {
     }
   };
 
-  // 챗봇의 처음 메세지
+  // 챗봇의 처음 메시지
   // dialogflow에서 설정한 intents 가져오기
   useEffect(() => {
     eventQuery("intro");
@@ -38,7 +38,7 @@ function Chatbot() {
 
   // textQuery
   const textQuery = async (text) => {
-    // 내가 보낼 메세지 처리
+    // 내가 보낼 메시지 처리
     let conversation = {
       who: "Me",
       content: {
@@ -51,7 +51,7 @@ function Chatbot() {
     // dispatch
     dispatch(saveMessage(conversation));
 
-    // 챗봇이 보낸 메세지 처리
+    // 챗봇이 보낸 메시지 처리
     const textQueryVariables = {
       text,
     };
@@ -88,7 +88,7 @@ function Chatbot() {
   };
 
   // eventQuery
-  // 챗봇이 보낸 메세지 처리
+  // 챗봇이 보낸 메시지 처리
   const eventQuery = async (event) => {
     const eventQueryVariables = {
       event,
@@ -134,14 +134,14 @@ function Chatbot() {
 
   // renderOneMessage
   const renderOneMessage = (message, i) => {
-    // 메세지 종류 구분
+    // 메시지 종류 구분
     if (message.content && message.content.text && message.content.text.text) {
-      // 텍스트 메세지
+      // 텍스트 메시지
       return (
         <Messages key={i} who={message.who} text={message.content.text.text} />
       );
     } else if (message.content && message.content.payload.fields.card) {
-      // 카드 메세지
+      // 카드 메시지
       const AvatarSrc =
         message.who === "ChatBot" ? (
           <RobotOutlined />
@@ -181,7 +181,7 @@ function Chatbot() {
       <div className="message-box">{renderMessage(messagesFromRedux)}</div>
       <input
         className="chat-input"
-        placeholder="메세지를 입력해주세요."
+        placeholder="메시지를 입력해주세요."
         onKeyPress={keyPressHanlder}
         type="text"
       />
