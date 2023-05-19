@@ -18,8 +18,8 @@ function Chatbot() {
   // state
   const messagesFromRedux = useSelector((state) => state.message.messages);
 
-  // keyPressHanlder
-  const keyPressHanlder = (e) => {
+  // onKeyPressHanlder
+  const onKeyPressHanlder = (e) => {
     if (e.key === "Enter") {
       if (!e.target.value) {
         return alert("입력이 필요합니다.");
@@ -182,7 +182,7 @@ function Chatbot() {
       <input
         className="chat-input"
         placeholder="메시지를 입력해주세요."
-        onKeyPress={keyPressHanlder}
+        onKeyPress={onKeyPressHanlder}
         type="text"
       />
     </div>
